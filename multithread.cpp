@@ -23,7 +23,7 @@ int main(int argc, char** argv)
    
     do 
     {
-        std::cout << "Enter a whole number lower bound to evaluate all prime numbers witin the range: ";
+        std::cout << "Enter a counting number to serve as a lower bound: ";
         std::cin >> lowerBound;
         std::cout << std::endl;
         //sets fail bool, and clears input buffer if failure accord
@@ -32,7 +32,7 @@ int main(int argc, char** argv)
             fail = true;
     } while (fail);
     do {
-        std::cout << "Enter an whole number upper bound( i.e. greater than or equal to lower bound): ";
+        std::cout << "Enter a counting number to serve as an upper bound that is greater or equal to the lower bound: ";
         std::cin >> upperBound;
         //sets fail bool, and clears input buffer if failure accord
         clear_buffer(&fail);
