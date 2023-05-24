@@ -1,14 +1,9 @@
 CC = g++
-CFLAGS = -Wall -Werror -pedantic
-EXE = multithread
-LIBS = 
-DEPS =
-OBJS = 
+CFLAGS = -Wall -Werror -pedantic -g
+EXE = main
+DEPS = main.cpp primes.cpp
 
 all: $(EXE)
 
-$(EXE): 
-		$(CC) $(CFLAGS) -o $(EXE) multithread.cpp
-
-clean:
-		rm $(EXE) $(OBJS) 
+$(EXE): $(DEPS)
+	$(CC) $(CFLAGS) -o $@ $^

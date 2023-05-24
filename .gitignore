@@ -1,4 +1,5 @@
 #ignore vsc meta folders/files
 .vscode
-.mutlithread.exe
+*.exe
+*.o
 .vscode/tasks.json
