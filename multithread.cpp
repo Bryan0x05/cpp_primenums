@@ -89,9 +89,7 @@ void Prime(int num, int upperBound)
    
 }
 //checks if the given number is prime
-//Note this is ineffecient, for each number, it has to check all the prime numbers that came before it to
-//validate that it is prime. However, this wouldn't be required with a static lower bound, could also do caching
-//to reduce calucations.
+//TODO: Make lower bound static or implement a caching system.
 bool isPrime(int num) {
     if (num <= 1 || (num % 2 == 0 && num != 2)) //even and not natural number check
         return false;
