@@ -11,7 +11,7 @@ $(EXE): $(DEPS)
 
 tests: $(TDEPS)
 	$(CC) $(CFLAGS) -o tests $^ 
-	./tests.exe
+	./tests
 #use del *.exe for windows
 clean:
 	rm *.exe
