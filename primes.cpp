@@ -1,6 +1,7 @@
 #include "primes.hpp"
 #include <cmath>
-//TODO: Setup unit testing using catch2(?) or Google test
+#include <thread>
+
 //TODO: Setup multi-threading
 //TODO: Optimizie program(better, more effecient variable loop step)
 bool isPrime(std::vector<int> primes, int num)
