@@ -13,7 +13,7 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
-    - name: make all
-      run: make all
+    - name: make main
+      run: make main
     - name: make tests 
       run: make tests #making the tests also executes the test in makefile
