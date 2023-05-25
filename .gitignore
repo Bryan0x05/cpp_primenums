@@ -1,5 +1,5 @@
 #ignore vsc meta folders/files
-.vscode
+*.vscode
 *.exe
 *.o
 .vscode/tasks.json
