@@ -12,7 +12,7 @@ $(EXE): $(DEPS)
 tests: $(TDEPS)
 	$(CC) $(CFLAGS) -o tests $^ 
 	./tests
-#use del *.exe for windows
+#use del $(EXE).exe for windows
 clean:
-	rm *.exe
+	rm $(EXE)
 	
