@@ -1,4 +1,4 @@
-name: C/C++ CI
+name: "C++ CI/CD"
 
 on:
   push:
@@ -7,13 +7,17 @@ on:
     branches: [ "main" ]
 
 jobs:
-  build:
-
+  pre-release:
     runs-on: ubuntu-latest
-
     steps:
     - uses: actions/checkout@v3
-    - name: make main
-      run: make main
-    - name: make tests 
-      run: make tests #making the tests also executes the test in makefile
+    - name: "tests"
+      run: make tests #makefile will auto run test cases
+    - name: "build" 
+      run: make primeNums
+    - name: Create Release
+      uses: softprops/action-gh-release@v1
+      with:
+        name: Auto-generated
+        tag_name: lastest
+        #todo, correctly compile binary and attach it to release
