@@ -18,4 +18,4 @@ jobs:
     - name: "valgrind install"
       run: sudo apt install -y valgrind
     - name: "run valgrind"
-      run:  valgrind ./primeNums
+      run:  valgrind ./main 100
