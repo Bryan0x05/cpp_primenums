@@ -1,10 +1,10 @@
 CC = g++
 CFLAGS = -Wall -Werror -pedantic -g
-EXE = primeNums
+EXE = main
 DEPS = main.cpp primes.cpp
 TDEPS = primes.cpp catch_amalgamated.cpp primes_test.cpp
 
-main: $(EXE)
+mainexe: $(EXE)
 
 $(EXE): $(DEPS)
 	$(CC) $(CFLAGS) -o $@ $^
