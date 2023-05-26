@@ -16,6 +16,6 @@ jobs:
     - name: "build" 
       run: make primeNums #make sures the code compiles with several flags for stricter compilation
     - name: "valgrind install"
-      run: apt install -y valgrind
+      run: sudo apt install -y valgrind
     - name: "run valgrind"
       run:  valgrind --leak-check=yes ./primeNums
