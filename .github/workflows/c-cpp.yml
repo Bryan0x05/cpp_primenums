@@ -7,15 +7,29 @@ on:
     branches: [ "main" ]
 
 jobs:
-  pre-release:
+  linux:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
     - name: "tests"
-      run: make tests #makefile will auto run test cases
+      run: make tests # makefile will auto run test cases
     - name: "build" 
-      run: make mainexe #make sures the code compiles with several flags for stricter compilation
+      run: make mainexe # make sures the code compiles with several flags for stricter compilation
     - name: "valgrind install"
       run: sudo apt install -y valgrind
     - name: "run valgrind"
-      run:  valgrind ./main 100
+      run:  valgrind ./main 100 # check for memory leaks
+    - name: "Create Release"
+      id: create_release
+      uses: actions/create-release@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        tag_name: ${{ github.ref }}
+        release_name: Release ${{ github.ref }}
+        body: |
+          Release for commit ${{ github.sha }}
+        draft: false
+        prerelease: false
+        files: |
+          main
