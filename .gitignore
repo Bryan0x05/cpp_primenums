@@ -1,5 +1,6 @@
 #ignore vsc meta folders/files
 *.vscode
+.vscode/tasks.json
+#ignore executables and object files(Redudant given mikefile can make them locally as needed)
 *.exe
 *.o
-.vscode/tasks.json
