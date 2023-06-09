@@ -19,17 +19,9 @@ jobs:
       run: sudo apt install -y valgrind
     - name: "run valgrind"
       run:  valgrind ./main 100 # check for memory leaks
-    - name: "Create Release"
-      id: create_release
-      uses: actions/create-release@v1
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    - name: Create Release
+      uses: softprops/action-gh-release@v1
       with:
-        tag_name: Latest
-        release_name: Release ${{ github.ref }}
-        body: |
-          Release for commit ${{ github.sha }}
-        draft: false
-        prerelease: false
+        name: Auto-generated
         files: |
           main
