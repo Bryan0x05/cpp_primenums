@@ -22,6 +22,7 @@ jobs:
     - name: Create Release
       uses: softprops/action-gh-release@v1
       with:
+        tag_name: lastest
         name: Auto-generated
         files: |
           main
